@@ -6,6 +6,9 @@ import org.junit.Test;
 import org.junit.Before;
 
 public class DurationTest {
+
+	private static final double DELTA = 0.000001;
+	
 	private Duration eighth;
 	private Duration quarter;
 	private Duration half;
@@ -20,9 +23,9 @@ public class DurationTest {
 	}
 	@Test
 	public void getBeatCountTest() {
-		assertEquals(0.5, eighth.getBeatCount());
-		assertEquals(1, quarter.getBeatCount());
-		assertEquals(2, half.getBeatCount());
-		assertEquals(4, whole.getBeatCount());
+		assertEquals(0.5, eighth.getBeatCount(), DELTA);
+		assertEquals(1, quarter.getBeatCount(), DELTA);
+		assertEquals(2, half.getBeatCount(), DELTA);
+		assertEquals(4, whole.getBeatCount(), DELTA);
 	}
 }

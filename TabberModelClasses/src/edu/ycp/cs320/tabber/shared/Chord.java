@@ -8,6 +8,7 @@ public class Chord {
 	private Duration chordLength;
 	
 	public Chord(String name, Note note, Duration chordLength){
+		notes= new ArrayList<Note>();
 		this.name=name;
 		this.notes.add(note);
 		this.chordLength=chordLength;

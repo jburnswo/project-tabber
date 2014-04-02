@@ -13,6 +13,11 @@ public class FakeDatabase implements IDatabase {
 	public FakeDatabase() {
 		userList = new ArrayList<User>();
 		// TODO: add some test User objects
+		
+		songList = new ArrayList<Song>();
+		Song song = new Song();
+		// TODO: initialize the Song
+		songList.add(song);
 	}
 	
 	@Override

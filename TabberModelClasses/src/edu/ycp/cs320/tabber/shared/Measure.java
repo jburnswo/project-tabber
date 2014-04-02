@@ -1,8 +1,9 @@
 package edu.ycp.cs320.tabber.shared;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Measure {
+public class Measure implements Serializable {
 	private ArrayList<Chord> chords;
 	private TimeSignature time;
 	

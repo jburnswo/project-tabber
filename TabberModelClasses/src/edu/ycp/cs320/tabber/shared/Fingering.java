@@ -1,6 +1,8 @@
 package edu.ycp.cs320.tabber.shared;
 
-public class Fingering {
+import java.io.Serializable;
+
+public class Fingering implements Serializable {
 	private int string;
 	private int fret;
 	

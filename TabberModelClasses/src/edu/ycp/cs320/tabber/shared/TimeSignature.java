@@ -1,6 +1,8 @@
 package edu.ycp.cs320.tabber.shared;
 
-public class TimeSignature {
+import java.io.Serializable;
+
+public class TimeSignature implements Serializable {
 	private int beatCount;
 	private int numBeats;
 	

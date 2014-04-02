@@ -10,11 +10,24 @@
     <servlet-name>greetServlet</servlet-name>
     <servlet-class>edu.ycp.cs320.tabber.server.GreetingServiceImpl</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>SongServiceImpl</servlet-name>
+    <servlet-class>edu.ycp.cs320.tabber.server.SongServiceImpl</servlet-class>
+  </servlet>
   
   <servlet-mapping>
     <servlet-name>greetServlet</servlet-name>
     <url-pattern>/tabberwebapp/greet</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SongServiceImpl</servlet-name>
+    <url-pattern>/tabberwebapp/song</url-pattern>
+  </servlet-mapping>
+  
+  <!--  Listeners -->
+  <listener>
+    <listener-class>edu.ycp.cs320.tabber.server.DatabaseInitListener</listener-class>
+  </listener>
   
   <!-- Default page to serve -->
   <welcome-file-list>

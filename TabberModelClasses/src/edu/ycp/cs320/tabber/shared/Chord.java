@@ -1,8 +1,9 @@
 package edu.ycp.cs320.tabber.shared;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Chord {
+public class Chord implements Serializable {
 	private String name;
 	private ArrayList<Note> notes;
 	private Duration chordLength;

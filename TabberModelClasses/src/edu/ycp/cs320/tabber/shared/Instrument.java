@@ -1,6 +1,8 @@
 package edu.ycp.cs320.tabber.shared;
 
-public class Instrument {
+import java.io.Serializable;
+
+public class Instrument implements Serializable {
 	private int numStrings;
 	
 	

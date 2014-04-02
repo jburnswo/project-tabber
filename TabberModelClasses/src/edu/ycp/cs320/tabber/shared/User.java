@@ -6,7 +6,7 @@ public class User {
 	private String userName;
 	private String email;
 	private String passWord;
-	private ArrayList<Song> savedSongs;
+	//private ArrayList<Song> savedSongs;
 	
 	public void setUserName(String userName){
 		this.userName=userName;
@@ -32,7 +32,7 @@ public class User {
 	public void changePassWord(String passWord){
 		this.setPassWord(passWord);
 	}
-	public void saveSong(Song songToSave){
-		this.savedSongs.add(songToSave);
-	}
+//	public void saveSong(Song songToSave){
+//		this.savedSongs.add(songToSave);
+//	}
 }

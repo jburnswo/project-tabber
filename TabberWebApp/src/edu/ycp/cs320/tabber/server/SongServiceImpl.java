@@ -10,8 +10,15 @@ public class SongServiceImpl implements SongService {
 	public Song findSong(String userName, String songName) {
 		FindSong controller = new FindSong();
 		
+		System.out.printf("Server: findSong called, userName=%s, songName=%s\n", userName, songName);
 		
-		return controller.findSong(userName, songName);
+		Song result = controller.findSong(userName, songName);
+		
+		if (result == null) {
+			System.out.println("Could not find song?");
+		}
+		
+		return result;
 	}
 
 }

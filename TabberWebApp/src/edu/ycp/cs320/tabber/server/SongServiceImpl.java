@@ -1,10 +1,12 @@
 package edu.ycp.cs320.tabber.server;
 
+import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+
 import edu.ycp.cs320.tabber.client.SongService;
 import edu.ycp.cs320.tabber.server.controllers.FindSong;
 import edu.ycp.cs320.tabber.shared.Song;
 
-public class SongServiceImpl implements SongService {
+public class SongServiceImpl extends RemoteServiceServlet implements SongService {
 
 	@Override
 	public Song findSong(String userName, String songName) {

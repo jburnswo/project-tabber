@@ -17,6 +17,7 @@ public class FakeDatabase implements IDatabase {
 		songList = new ArrayList<Song>();
 		Song song = new Song();
 		// TODO: initialize the Song
+		song.setName("Twinkle Twinkle Little Star");
 		songList.add(song);
 	}
 	

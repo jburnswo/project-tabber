@@ -5,17 +5,19 @@ import java.util.ArrayList;
 
 public class Song implements Serializable {
 	// TODO:
-	// private int id;      // the song's unique id
-	// private int userId;  // the user that "owns" the song
+	private int id;      // the song's unique id
+	private int userId;  // the user that "owns" the song
 	private String name;
 	private ArrayList<Measure> measures;
 	
-	public Song() {
+	public Song(){
 		
 	}
 	
-	public Song(String name, Measure measure){
+	public Song(String name, Measure measure, int songId, int userId){
 		this.name=name;
+		this.id=songId;
+		this.userId=userId;
 		this.measures.add(measure);
 	}
 	

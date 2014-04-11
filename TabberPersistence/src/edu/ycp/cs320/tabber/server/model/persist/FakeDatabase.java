@@ -21,10 +21,14 @@ public class FakeDatabase implements IDatabase {
 		songList = new ArrayList<Song>();
 		Song song = new Song();
 		Song song2 = new Song();
+		Song song3 = new Song();
 		// TODO: initialize the Song
 		song.setName("Twinkle Twinkle Little Star");
 		song2.setName("Lemon Meringue Tie");
+		song3.setName("Hats off to the Bull");
 		songList.add(song);
+		songList.add(song2);
+		songList.add(song3);
 	}
 	
 	@Override

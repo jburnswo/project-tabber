@@ -29,6 +29,22 @@ public class Song implements Serializable {
 		return this.name;
 	}
 	
+//	public void setUserId(User userId){
+//		this.userId=userId;
+//	}
+//	
+//	public User getUserId(){
+//		return this.userId;
+//	}
+//	
+//	public void setId(int id){
+//		this.id=id;
+//	}
+//	
+//	public int getId(){
+//		return this.id;
+//	}
+	
 	public void setMeasures(ArrayList<Measure> measures) {
 		this.measures = measures;
 	}

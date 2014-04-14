@@ -30,9 +30,10 @@ public class TabberWebApp implements EntryPoint {
 		RootLayoutPanel rootLayoutPanel_2 = RootLayoutPanel.get();
 		rootLayoutPanel_2.setWidgetLeftRight(view, 10.0, Unit.PX, 10.0, Unit.PX);
 		
-
+		
 		// For now, just load an initial song and display it
-		RPC.songService.findSong("username", "Hats off to the Bull", new AsyncCallback<Song>() {
+		/*
+		RPC.songService.findSong("username", "Twinkle Twinkle Little Star" , new AsyncCallback<Song>() {
 			
 			@Override
 			public void onSuccess(Song result) {
@@ -45,5 +46,6 @@ public class TabberWebApp implements EntryPoint {
 				Util.alertWidget("Error", "Could not load song: " + caught.getMessage()).center();
 			}
 		});
+		*/
 	}
 }

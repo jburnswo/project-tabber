@@ -19,6 +19,12 @@ public class FakeDatabase implements IDatabase {
 		// TODO: initialize the Song
 		song.setName("Twinkle Twinkle Little Star");
 		songList.add(song);
+		
+		Song song2 = new Song();
+		
+		song2.setName("Lemon Meringue Tie");
+		songList.add(song2);
+		
 	}
 	
 	@Override

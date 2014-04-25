@@ -27,6 +27,12 @@ public class MainView extends Composite implements ISubscriber {
 		panel.setWidgetLeftWidth(btnTab, 182.0, Unit.PX, 81.0, Unit.PX);
 		panel.setWidgetTopHeight(btnTab, 171.0, Unit.PX, 30.0, Unit.PX);
 		
+		btnTab.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				TabberWebApp.setView(new SongView());
+			}
+		});
+		
 		Button btnReferenceGuide = new Button("Reference Guide");
 		panel.add(btnReferenceGuide);
 		panel.setWidgetLeftWidth(btnReferenceGuide, 156.0, Unit.PX, 135.0, Unit.PX);
@@ -47,6 +53,25 @@ public class MainView extends Composite implements ISubscriber {
 		panel.add(btnCreateAccount);
 		panel.setWidgetLeftWidth(btnCreateAccount, 331.0, Unit.PX, 119.0, Unit.PX);
 		panel.setWidgetTopHeight(btnCreateAccount, 36.0, Unit.PX, 30.0, Unit.PX);
+		
+		btnCreateAccount.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				TabberWebApp.setView(new CreateAccountView());
+			}
+		});
+		
+		
+		Button ManageAccountButton = new Button("New button");
+		ManageAccountButton.setText("Manage Account");
+		panel.add(ManageAccountButton);
+		panel.setWidgetLeftWidth(ManageAccountButton, 331.0, Unit.PX, 119.0, Unit.PX);
+		panel.setWidgetTopHeight(ManageAccountButton, 72.0, Unit.PX, 30.0, Unit.PX);
+		
+		ManageAccountButton.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				TabberWebApp.setView(new AccountView());
+			}
+		});
 		
 	}
 	

@@ -5,7 +5,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
 import edu.ycp.cs320.tabber.shared.User;
 
-@RemoteServiceRelativePath("login")
+@RemoteServiceRelativePath("userlogin")
 public interface LoginService extends RemoteService{
-	public void userLogIn(String Username);
+	public User login(String username, String password);
 }

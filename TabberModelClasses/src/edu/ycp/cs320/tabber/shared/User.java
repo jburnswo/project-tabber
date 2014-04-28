@@ -39,4 +39,9 @@ public class User {
 //	public void saveSong(Song songToSave){
 //	this.savedSongs.add(songToSave);
 //	}
+//	public boolean isLoggedIn(){
+//		if(==true)
+//			return true;
+//		return false;
+//	}
 }

@@ -7,5 +7,5 @@ import edu.ycp.cs320.tabber.shared.User;
 
 @RemoteServiceRelativePath("create")
 public interface CreateAccountService extends RemoteService {
-	public User createAccount(String Username, String Password, String Email);
+	public void createAccount(String Username, String Password, String Email);
 }

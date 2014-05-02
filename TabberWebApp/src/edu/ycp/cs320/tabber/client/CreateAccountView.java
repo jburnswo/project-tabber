@@ -22,17 +22,17 @@ public class CreateAccountView extends Composite implements ISubscriber{
 		LayoutPanel panel = new LayoutPanel();
 		initWidget(panel);
 		
-		TextBox UserNameTextBox = new TextBox();
+		final TextBox UserNameTextBox = new TextBox();
 		panel.add(UserNameTextBox);
 		panel.setWidgetLeftWidth(UserNameTextBox, 101.0, Unit.PX, 173.0, Unit.PX);
 		panel.setWidgetTopHeight(UserNameTextBox, 38.0, Unit.PX, 34.0, Unit.PX);
 		
-		TextBox PassWordTextBox = new TextBox();
+		final TextBox PassWordTextBox = new TextBox();
 		panel.add(PassWordTextBox);
 		panel.setWidgetLeftWidth(PassWordTextBox, 101.0, Unit.PX, 173.0, Unit.PX);
 		panel.setWidgetTopHeight(PassWordTextBox, 78.0, Unit.PX, 34.0, Unit.PX);
 		
-		TextBox EmailTextBox = new TextBox();
+		final TextBox EmailTextBox = new TextBox();
 		panel.add(EmailTextBox);
 		panel.setWidgetLeftWidth(EmailTextBox, 101.0, Unit.PX, 173.0, Unit.PX);
 		panel.setWidgetTopHeight(EmailTextBox, 118.0, Unit.PX, 34.0, Unit.PX);
@@ -58,11 +58,26 @@ public class CreateAccountView extends Composite implements ISubscriber{
 		panel.setWidgetLeftWidth(CreateButton, 101.0, Unit.PX, 81.0, Unit.PX);
 		panel.setWidgetTopHeight(CreateButton, 171.0, Unit.PX, 30.0, Unit.PX);
 		
-		CreateButton.addClickHandler(new ClickHandler() {
-			public void onClick(ClickEvent event) {
-				TabberWebApp.setView(new MainView());
-			}
-		});
+//		CreateButton.addClickHandler(new ClickHandler() {
+//		    public void onClick(ClickEvent event) {
+//		    	String Username=UserNameTextBox.getText();
+//		    	String Password=PassWordTextBox.getText();
+//		    	String Email=EmailTextBox.getText();
+//		    	RPC.createAccountService.createAccount(Username, Password , Email, new AsyncCallback<Void>() {
+//					
+//					@Override
+//					public void onSuccess(Song result) {
+//						// Display the song in the view
+//						
+//					}
+//					
+//					@Override
+//					public void onFailure(Throwable caught) {
+//						Util.alertWidget("Error", "Could not load song: " + caught.getMessage()).center();
+//					}
+//				});
+//		    }
+//		});
 		
 		Button BackButton = new Button("New button");
 		BackButton.setText("Back");

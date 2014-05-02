@@ -7,4 +7,8 @@ public interface IDatabase {
 	public User login(String username, String password);
 	
 	public Song findSong(String userName, String songName);
+	
+	public void createAccount(String Username, String Password, String Email);
+	
+	public void changeUserInfo(String Username, String Password, String Email);
 }

@@ -61,6 +61,13 @@ public class FakeDatabase implements IDatabase {
 	@Override
 	public User login(String username, String password) {
 		// TODO Auto-generated method stub
+		for (User user : userList) {
+			if (user.getUserName().equals(username)) {
+				if(password==user.getPassWord()){
+					return user;
+				}
+			}
+		}
 		return null;
 	}
 	
@@ -89,6 +96,12 @@ public class FakeDatabase implements IDatabase {
 	@Override
 	public void changeUserInfo(String Username, String Password, String Email) {
 		// TODO Auto-generated method stub
+		for (User user : userList) {
+			if (user.getUserName().equals(Username)) {
+				user.setPassWord(Password);
+				user.setEmail(Email);
+			}
+		}
 		
 	}
 }

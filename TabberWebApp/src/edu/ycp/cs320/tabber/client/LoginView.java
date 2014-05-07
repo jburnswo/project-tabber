@@ -13,6 +13,7 @@ import com.google.gwt.event.dom.client.KeyPressHandler;
 import edu.ycp.cs320.tabber.shared.IPublisher;
 import edu.ycp.cs320.tabber.shared.ISubscriber;
 import edu.ycp.cs320.tabber.shared.Song;
+import edu.ycp.cs320.tabber.shared.User;
 
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Button;
@@ -23,12 +24,12 @@ public class LoginView extends Composite implements ISubscriber {
 		LayoutPanel panel = new LayoutPanel();
 		initWidget(panel);
 		
-		TextBox UserNameTextBox = new TextBox();
+		final TextBox UserNameTextBox = new TextBox();
 		panel.add(UserNameTextBox);
 		panel.setWidgetLeftWidth(UserNameTextBox, 110.0, Unit.PX, 136.0, Unit.PX);
 		panel.setWidgetTopHeight(UserNameTextBox, 54.0, Unit.PX, 28.0, Unit.PX);
 		
-		TextBox PassWordTextBox = new TextBox();
+		final TextBox PassWordTextBox = new TextBox();
 		panel.add(PassWordTextBox);
 		panel.setWidgetLeftWidth(PassWordTextBox, 110.0, Unit.PX, 136.0, Unit.PX);
 		panel.setWidgetTopHeight(PassWordTextBox, 88.0, Unit.PX, 28.0, Unit.PX);
@@ -37,6 +38,29 @@ public class LoginView extends Composite implements ISubscriber {
 		panel.add(LoginButton);
 		panel.setWidgetLeftWidth(LoginButton, 137.0, Unit.PX, 81.0, Unit.PX);
 		panel.setWidgetTopHeight(LoginButton, 122.0, Unit.PX, 30.0, Unit.PX);
+		
+		LoginButton.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				String Username=UserNameTextBox.getText();
+		    	String Password=PassWordTextBox.getText();
+		    	RPC.loginService.login(Username, Password , new AsyncCallback<User>() {
+					
+					@Override
+					public void onSuccess(User result) {
+						// User is logged in
+						result.login();
+						
+						// Store the User object in the Session
+						Session.getInstance().setUser(result);
+					}
+					
+					@Override
+					public void onFailure(Throwable caught) {
+						Util.alertWidget("Error", "Could not login: " + caught.getMessage()).center();
+					}
+				});
+			}
+		});
 		
 		InlineLabel UserNameLabel = new InlineLabel("Username:");
 		panel.add(UserNameLabel);

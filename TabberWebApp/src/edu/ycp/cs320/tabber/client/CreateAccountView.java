@@ -58,26 +58,26 @@ public class CreateAccountView extends Composite implements ISubscriber{
 		panel.setWidgetLeftWidth(CreateButton, 101.0, Unit.PX, 81.0, Unit.PX);
 		panel.setWidgetTopHeight(CreateButton, 171.0, Unit.PX, 30.0, Unit.PX);
 		
-//		CreateButton.addClickHandler(new ClickHandler() {
-//		    public void onClick(ClickEvent event) {
-//		    	String Username=UserNameTextBox.getText();
-//		    	String Password=PassWordTextBox.getText();
-//		    	String Email=EmailTextBox.getText();
-//		    	RPC.createAccountService.createAccount(Username, Password , Email, new AsyncCallback<Void>() {
-//					
-//					@Override
-//					public void onSuccess(Song result) {
-//						// Display the song in the view
-//						
-//					}
-//					
-//					@Override
-//					public void onFailure(Throwable caught) {
-//						Util.alertWidget("Error", "Could not load song: " + caught.getMessage()).center();
-//					}
-//				});
-//		    }
-//		});
+		CreateButton.addClickHandler(new ClickHandler() {
+		    public void onClick(ClickEvent event) {
+		    	String Username=UserNameTextBox.getText();
+		    	String Password=PassWordTextBox.getText();
+		    	String Email=EmailTextBox.getText();
+		    	RPC.createAccountService.createAccount(Username, Password , Email, new AsyncCallback<Void>() {
+					
+					@Override
+					public void onSuccess(Void result) {
+						// Account is created
+						
+					}
+					
+					@Override
+					public void onFailure(Throwable caught) {
+						Util.alertWidget("Error", "Could not create account: " + caught.getMessage()).center();
+					}
+				});
+		    }
+		});
 		
 		Button BackButton = new Button("New button");
 		BackButton.setText("Back");

@@ -8,6 +8,10 @@ public class User {
 	private String passWord;
 	//private ArrayList<Song> savedSongs;
 	
+	public User(){
+
+	}
+	
 	public void setUserName(String userName){
 		this.userName=userName;
 	}
@@ -33,6 +37,6 @@ public class User {
 		this.setPassWord(passWord);
 	}
 //	public void saveSong(Song songToSave){
-//		this.savedSongs.add(songToSave);
+//	this.savedSongs.add(songToSave);
 //	}
 }

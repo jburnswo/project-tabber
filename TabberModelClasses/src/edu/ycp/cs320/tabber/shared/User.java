@@ -6,10 +6,11 @@ public class User {
 	private String userName;
 	private String email;
 	private String passWord;
+	private boolean loginstatus;
 	//private ArrayList<Song> savedSongs;
 	
 	public User(){
-
+		this.loginstatus=false;
 	}
 	
 	public void setUserName(String userName){
@@ -35,6 +36,14 @@ public class User {
 	}
 	public void changePassWord(String passWord){
 		this.setPassWord(passWord);
+	}
+	
+	public void login(){
+		this.loginstatus=true;
+	}
+	
+	public void logout(){
+		this.loginstatus=false;
 	}
 //	public void saveSong(Song songToSave){
 //	this.savedSongs.add(songToSave);

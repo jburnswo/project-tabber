@@ -15,8 +15,8 @@ public class FakeDatabase implements IDatabase {
 		// TODO: add some test User objects
 		User jburnswo = new User();
 		User jsalaza1 = new User();
-		userList.add(jburnswo);
-		userList.add(jsalaza1);
+//		userList.add(jburnswo);
+//		userList.add(jsalaza1);
 		
 		songList = new ArrayList<Song>();
 		Song song = new Song();
@@ -61,6 +61,13 @@ public class FakeDatabase implements IDatabase {
 	@Override
 	public User login(String username, String password) {
 		// TODO Auto-generated method stub
+		for (User user : userList) {
+			if (user.getUserName().equals(username)) {
+				if(password==user.getPassWord()){
+					return user;
+				}
+			}
+		}
 		return null;
 	}
 	
@@ -72,5 +79,29 @@ public class FakeDatabase implements IDatabase {
 			}
 		}
 		return null;
+	}
+
+	@Override
+	public void createAccount(String Username, String Password, String Email) {
+		// TODO Auto-generated method stub
+		
+		User newUser = new User();
+		newUser.setUserName(Username);
+		newUser.setPassWord(Password);
+		newUser.setEmail(Email);
+		this.userList.add(newUser);
+		
+	}
+
+	@Override
+	public void changeUserInfo(String Username, String Password, String Email) {
+		// TODO Auto-generated method stub
+		for (User user : userList) {
+			if (user.getUserName().equals(Username)) {
+				user.setPassWord(Password);
+				user.setEmail(Email);
+			}
+		}
+		
 	}
 }

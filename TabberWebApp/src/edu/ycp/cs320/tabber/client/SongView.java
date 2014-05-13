@@ -51,6 +51,17 @@ public class SongView extends Composite implements ISubscriber {
 		panel.setWidgetLeftWidth(searchButton, 275.0, Unit.PX, 81.0, Unit.PX);
 		panel.setWidgetTopHeight(searchButton, 4.0, Unit.PX, 30.0, Unit.PX);
 		
+		Button BackButton = new Button("Back");
+		panel.add(BackButton);
+		panel.setWidgetLeftWidth(BackButton, 369.0, Unit.PX, 81.0, Unit.PX);
+		panel.setWidgetTopHeight(BackButton, 0.0, Unit.PX, 30.0, Unit.PX);
+		
+		BackButton.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				TabberWebApp.setView(new MainView());
+			}
+		});
+		
 		searchButton.addClickHandler(new ClickHandler() {
 		    public void onClick(ClickEvent event) {
 		    	String songName=searchBox.getText();

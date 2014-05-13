@@ -6,6 +6,7 @@ import com.google.gwt.event.dom.client.KeyPressEvent;
 import com.google.gwt.event.dom.client.KeyPressHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.DialogBox;
+import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
 
 import edu.ycp.cs320.tabber.shared.Song;
@@ -17,18 +18,15 @@ import com.google.gwt.user.client.ui.InlineLabel;
  * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class TabberWebApp implements EntryPoint {
+	private static IsWidget currentView = null;
+	
 	/**
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
 		
-		RootLayoutPanel rootLayoutPanel_1 = RootLayoutPanel.get();
-		RootLayoutPanel rootLayoutPanel = RootLayoutPanel.get();
-		final SongView view = new SongView();
-		rootLayoutPanel.add(view);
-		rootLayoutPanel.setWidgetLeftWidth(view, 10.0, Unit.PX, 430.0, Unit.PX);
-		RootLayoutPanel rootLayoutPanel_2 = RootLayoutPanel.get();
-		rootLayoutPanel_2.setWidgetLeftRight(view, 10.0, Unit.PX, 10.0, Unit.PX);
+		final IsWidget view = new MainView();
+		setView(view);
 		
 		
 		// For now, just load an initial song and display it
@@ -47,5 +45,18 @@ public class TabberWebApp implements EntryPoint {
 			}
 		});
 		*/
+	}
+
+	public static void setView(IsWidget view) {
+		RootLayoutPanel rootLayoutPanel = RootLayoutPanel.get();
+
+		if (currentView != null) {
+			rootLayoutPanel.remove(currentView);
+		}
+		
+		rootLayoutPanel.add(view);
+		rootLayoutPanel.setWidgetLeftWidth(view, 10.0, Unit.PX, 430.0, Unit.PX);
+		rootLayoutPanel.setWidgetLeftRight(view, 10.0, Unit.PX, 10.0, Unit.PX);
+		currentView = view;
 	}
 }
